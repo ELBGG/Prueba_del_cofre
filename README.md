@@ -1,10 +1,10 @@
 # Prueba del Cofre - ChestLoot Mod
 
-## 📋 Descripción
+## Descripción
 
 **Prueba del Cofre** (ChestLoot) es un mod avanzado de Minecraft para servidores Fabric que permite asignar automáticamente tablas de botín (loot tables) a los cofres según el bioma donde se encuentran. El mod genera dinámicamente el contenido de los cofres cuando un jugador los abre por primera vez, permitiendo una experiencia de juego personalizada y configurable.
 
-## 🚀 Información del Proyecto
+## Información del Proyecto
 
 - **Lenguaje principal:** Java 17
 - **Framework:** Fabric Mod Loader
@@ -12,13 +12,13 @@
 - **Entorno:** Servidor (Server-side)
 
 
-## ⚙️ Funcionamiento
+## Funcionamiento
 
-### 🎯 Concepto Principal
+### Concepto Principal
 
 El mod intercepta la apertura de cofres y, basándose en el bioma donde se encuentra el cofre, asigna automáticamente una tabla de botín personalizada. Esto permite crear experiencias únicas en diferentes áreas del mundo de Minecraft.
 
-### 📦 Estructura del Código
+### Estructura del Código
 
 ```
 src/main/java/me/elb/prueba_del_cofre/
@@ -40,7 +40,7 @@ src/main/java/me/elb/prueba_del_cofre/
 
 ---
 
-## 🔧 Componentes Detallados
+## Componentes Detallados
 
 ### **1. Prueba_del_cofre.java** - Clase Principal
 **Ubicación:** `me.elb.prueba_del_cofre.Prueba_del_cofre`
@@ -48,11 +48,11 @@ src/main/java/me/elb/prueba_del_cofre/
 **Función:** Inicializa y coordina todos los componentes del mod
 
 **Responsabilidades:**
-- ✅ Inicializa el `ConfigLoader` para cargar la configuración de biomas
-- ✅ Inicializa el `CustomLootTableManager` para gestionar loot tables personalizadas
-- ✅ Registra el comando `/chestloot`
-- ✅ Inyecta las loot tables personalizadas cuando el servidor inicia
-- ✅ Proporciona acceso estático a los gestores de configuración y loot tables
+- Inicializa el `ConfigLoader` para cargar la configuración de biomas
+- Inicializa el `CustomLootTableManager` para gestionar loot tables personalizadas
+- Registra el comando `/chestloot`
+- Inyecta las loot tables personalizadas cuando el servidor inicia
+- Proporciona acceso estático a los gestores de configuración y loot tables
 
 **Código clave:**
 ```java
@@ -75,12 +75,12 @@ public void onInitialize() {
 **Función:** Intercepta la apertura de cofres y genera botín dinámicamente
 
 **Responsabilidades:**
-- 🎲 **Detecta cuando un jugador abre un cofre** (`startOpen`)
-- 🗺️ **Determina el bioma** donde está ubicado el cofre
-- 📋 **Consulta las loot tables** configuradas para ese bioma
-- 🎰 **Selecciona aleatoriamente** una loot table de las disponibles
-- 💎 **Llena el cofre** con items según la loot table elegida
-- 💾 **Marca el cofre como usado** para evitar regeneración
+- **Detecta cuando un jugador abre un cofre** (`startOpen`)
+- **Determina el bioma** donde está ubicado el cofre
+- **Consulta las loot tables** configuradas para ese bioma
+- **Selecciona aleatoriamente** una loot table de las disponibles
+- **Llena el cofre** con items según la loot table elegida
+- **Marca el cofre como usado** para evitar regeneración
 
 **Flujo de ejecución:**
 ```
@@ -115,10 +115,10 @@ private void chestLoot$fillWithCustomLoot(ServerLevel level, ChestBlockEntity ch
 **Función:** Intercepta cuando un jugador coloca un cofre
 
 **Responsabilidades:**
-- 🏗️ **Detecta la colocación de cofres** por jugadores
-- 🎮 **Verifica el modo de juego** (Survival/Adventure vs Creative/Spectator)
-- ✔️ **Marca inmediatamente como "usado"** los cofres colocados en Survival/Adventure
-- 🚫 **No marca** los cofres colocados en Creative/Spectator
+- **Detecta la colocación de cofres** por jugadores
+- **Verifica el modo de juego** (Survival/Adventure vs Creative/Spectator)
+- **Marca inmediatamente como "usado"** los cofres colocados en Survival/Adventure
+- **No marca** los cofres colocados en Creative/Spectator
 
 **Por qué es importante:**
 Evita que los cofres colocados por jugadores generen botín automáticamente. Solo los cofres naturales (o generados) deben tener loot automático.
@@ -138,9 +138,9 @@ if (gameMode == GameType.SURVIVAL || gameMode == GameType.ADVENTURE) {
 **Función:** Proporciona acceso a campos privados de contenedores
 
 **Responsabilidades:**
-- 🔓 **Accede al campo privado `lootTable`** de `RandomizableContainerBlockEntity`
-- 📖 **Permite leer** la loot table actual del cofre
-- ✍️ **Permite escribir** una nueva loot table
+- **Accede al campo privado `lootTable`** de `RandomizableContainerBlockEntity`
+- **Permite leer** la loot table actual del cofre
+- **Permite escribir** una nueva loot table
 
 **Uso de Mixin Accessor:**
 ```java
@@ -161,8 +161,8 @@ Esto es necesario porque Minecraft no expone estos métodos públicamente.
 **Función:** Define métodos para rastrear si un cofre ya fue usado
 
 **Responsabilidades:**
-- 💾 **Almacena el estado "usado"** del cofre
-- 🔄 **Persiste el estado** en NBT (se guarda con el mundo)
+- **Almacena el estado "usado"** del cofre
+- **Persiste el estado** en NBT (se guarda con el mundo)
 
 **Implementación:**
 ```java
@@ -182,11 +182,11 @@ Este flag se guarda en NBT como `"ChestLootUsed": true/false`
 **Función:** Carga y gestiona la configuración de biomas y loot tables
 
 **Responsabilidades:**
-- 📂 **Crea el archivo de configuración** si no existe
-- 📝 **Genera configuración por defecto** con ejemplos
-- 🗺️ **Mapea biomas a loot tables** (muchos a muchos)
-- 🎲 **Selecciona loot tables aleatoriamente** de las disponibles
-- ♻️ **Recarga la configuración** con el comando `/chestloot reload`
+- **Crea el archivo de configuración** si no existe
+- **Genera configuración por defecto** con ejemplos
+- **Mapea biomas a loot tables** (muchos a muchos)
+- **Selecciona loot tables aleatoriamente** de las disponibles
+- **Recarga la configuración** con el comando `/chestloot reload`
 
 **Estructura de configuración:**
 ```json
@@ -241,11 +241,11 @@ Utilizado por Gson para serializar/deserializar JSON.
 **Función:** Gestiona loot tables personalizadas creadas por el usuario
 
 **Responsabilidades:**
-- 📂 **Carga archivos JSON** de `config/chestloot/loots/`
-- 🎨 **Crea loot tables de ejemplo** si no existen
-- 💉 **Inyecta loot tables en el servidor** mediante reflexión
-- 🔄 **Deserializa JSON** a objetos `LootTable` de Minecraft
-- ⚠️ **Sugiere usar datapacks** si la inyección falla
+- **Carga archivos JSON** de `config/chestloot/loots/`
+- **Crea loot tables de ejemplo** si no existen
+- **Inyecta loot tables en el servidor** mediante reflexión
+- **Deserializa JSON** a objetos `LootTable` de Minecraft
+- **Sugiere usar datapacks** si la inyección falla
 
 **Loot tables de ejemplo generadas:**
 1. `custom_mineshaft.json` - Cofre tipo mina
@@ -277,12 +277,12 @@ Map<ResourceLocation, LootTable> tablesMap = (Map) tablesField.get(lootTables);
 ```
 
 **Requisitos:**
-- 🔑 Nivel de permisos: 2 (Operador)
+- Nivel de permisos: 2 (Operador)
 
 **Funcionalidad:**
-- ♻️ **Recarga la configuración** sin reiniciar el servidor
-- ✅ **Muestra mensaje de éxito** en verde
-- ❌ **Muestra mensaje de error** en rojo si falla
+- **Recarga la configuración** sin reiniciar el servidor
+- **Muestra mensaje de éxito** en verde
+- **Muestra mensaje de error** en rojo si falla
 
 **Uso:**
 ```
@@ -293,7 +293,7 @@ Map<ResourceLocation, LootTable> tablesMap = (Map) tablesField.get(lootTables);
 
 ---
 
-## 🎮 Flujo de Funcionamiento Completo
+## Flujo de Funcionamiento Completo
 
 ### **Escenario 1: Servidor Inicia**
 ```
@@ -361,7 +361,7 @@ Map<ResourceLocation, LootTable> tablesMap = (Map) tablesField.get(lootTables);
 
 ---
 
-## 📁 Archivos de Configuración
+## Archivos de Configuración
 
 ### **1. prueba_del_cofre.mixins.json**
 ```json
@@ -402,12 +402,12 @@ Map<ResourceLocation, LootTable> tablesMap = (Map) tablesField.get(lootTables);
 
 ---
 
-## 🛠️ Instalación y Configuración
+## Instalación y Configuración
 
 ### **Requisitos Previos**
-- ✅ Java 17 o superior
-- ✅ Servidor Minecraft con Fabric Loader
-- ✅ Fabric API instalada
+- Java 17 o superior
+- Servidor Minecraft con Fabric Loader
+- Fabric API instalada
 
 
 ## ⚙️ Configuración Avanzada
@@ -470,7 +470,7 @@ Crea `config/chestloot/loots/custom_jungle.json`:
 /chestloot reload
 ```
 
-## 📊 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **Fabric Mod Loader** - Framework de modding
 - **Mixin** - Inyección de código en runtime
@@ -479,13 +479,13 @@ Crea `config/chestloot/loots/custom_jungle.json`:
 - **Java Reflection** - Inyección de loot tables
 
 
-## 📄 Licencia
+## Licencia
 
 All Rights Reserved - Ver `LICENSE.txt`
 
 ---
 
-## ✨ Autor
+## Autor
 
 **ELBGG** 
 - [GitHub](https://github.com/ELBGG)
@@ -494,7 +494,7 @@ All Rights Reserved - Ver `LICENSE.txt`
 
 ---
 
-## 🔗 Enlaces Útiles
+## Enlaces Útiles
 
 - [Documentación Fabric](https://fabricmc.net/wiki/)
 - [Loot Table Generator](https://misode.github.io/loot-table/?version=1.20)
