@@ -487,7 +487,10 @@ All Rights Reserved - Ver `LICENSE.txt`
 
 ## ✨ Autor
 
-**ELBGG** - [GitHub](https://github.com/ELBGG)
+**ELBGG** 
+- [GitHub](https://github.com/ELBGG)
+- [X](https://x.com/ELBGG_)
+- [Youtube](https://www.youtube.com/@elbgg)
 
 ---
 
