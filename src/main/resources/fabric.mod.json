@@ -3,15 +3,11 @@
   "id": "prueba_del_cofre",
   "version": "${version}",
   "name": "Prueba del cofre",
-  "description": "Resolucion del problema "
-  Prueba
-  del
-  cofre
-  "",
+  "description": "Resolucion del problema Pruebadelcofre",
   "authors": [],
   "contact": {},
   "license": "All-Rights-Reserved",
-  "icon": "assets/prueba_del_cofre/icon.png",
+  "icon": "assets/pruebadelcofre/icon.png",
   "environment": "server",
   "entrypoints": {
     "main": [

@@ -1,4 +1,4 @@
-package me.elb.prueba_del_cofre.access;
+package me.elb.prueba_del_cofre.mixin;
 
 import net.minecraft.resources.ResourceLocation;
 import org.spongepowered.asm.mixin.Mixin;
