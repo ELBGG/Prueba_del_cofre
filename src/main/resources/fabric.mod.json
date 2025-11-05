@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "prueba_del_cofre",
+  "version": "${version}",
+  "name": "Prueba del cofre",
+  "description": "Resolucion del problema "
+  Prueba
+  del
+  cofre
+  "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/prueba_del_cofre/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "me.elb.prueba_del_cofre.Prueba_del_cofre"
+    ]
+  },
+  "mixins": [
+    "prueba_del_cofre.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
